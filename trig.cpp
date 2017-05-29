@@ -17,6 +17,7 @@
   If not, see <http://www.gnu.org/licenses/old-licenses/gpl-2.0.html>
 **********************************************************************/
 #include <math.h>
+#include <Arduino.h>
 
 #include "trig.h"
 

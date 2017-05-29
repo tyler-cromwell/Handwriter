@@ -16,9 +16,12 @@
   along with Ritchie.
   If not, see <http://www.gnu.org/licenses/old-licenses/gpl-2.0.html>
 **********************************************************************/
+#include <math.h>
+#include <Arduino.h>
 #include <Servo.h>
 
 #include "arm.h"
+#include "trig.h"
 
 Servo servo1;
 Servo servo2;
@@ -45,7 +48,7 @@ void arm_lower() {
 
 
 void arm_reset() {
-#ifdef (ARM_DEBUG > 0)
+#if (ARM_DEBUG > 0)
     Serial.println("========================================");
     Serial.println(">>> Arm reseting <<<");
 #endif
@@ -62,7 +65,7 @@ void arm_prepare() {
     double t3 = _theta3(0.0);
     double t4 = _theta4(0.0);
 
-#ifdef (ARM_DEBUG > 0)
+#if (ARM_DEBUG > 0)
     Serial.println("========================================");
     Serial.println(">>> Arm preparing <<<");
 #endif
@@ -70,7 +73,7 @@ void arm_prepare() {
     servo2.write(THETA_INIT2 - 90.0 + t2 - t2h);  // Point straight up
     servo3.write(THETA_INIT3 + 90.0 - t3);        // Point straight out
     servo4.write(THETA_INIT4 + 90.0 - t4);        // Point down
-#ifdef (ARM_DEBUG > 0)
+#if (ARM_DEBUG > 0)
     Serial.print("Side B:\t\t");  Serial.print(_sideB(0.0));  Serial.println(" cm");
     Serial.print("Height:\t\t");  Serial.print(_height(0.0)); Serial.println(" cm");
     Serial.print("Theta1:\t\t");  Serial.print(0.0);          Serial.println(" deg");
@@ -83,13 +86,13 @@ void arm_prepare() {
 
 
 void arm_extend(double l) {
-    double t1 = servo1.read() - THETA_INIT1;
+    //double t1 = servo1.read() - THETA_INIT1;
     double t2 = _theta2(l);
     double t2h = _theta2h(l);
     double t3 = _theta3(l);
     double t4 = _theta4(l);
 
-#ifdef (ARM_DEBUG > 0)
+#if (ARM_DEBUG > 0)
     Serial.println("========================================");
     Serial.print(">>> Extending tip by ");
     Serial.print(l);  Serial.println(" cm <<<");
@@ -97,7 +100,7 @@ void arm_extend(double l) {
     servo2.write(THETA_INIT2 - 90.0 + t2 - t2h);
     servo3.write(THETA_INIT3 + 90.0 - t3);
     servo4.write(THETA_INIT4 + 90.0 - t4);
-#ifdef (ARM_DEBUG > 0)
+#if (ARM_DEBUG > 0)
     Serial.print("Side B:\t\t");  Serial.print(_sideB(l));  Serial.println(" cm");
     Serial.print("Height:\t\t");  Serial.print(_height(l)); Serial.println(" cm");
     Serial.print("Theta1:\t\t");  Serial.print(t1);         Serial.println(" deg");

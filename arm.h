@@ -24,6 +24,12 @@
 
 
 /**
+ * Initializes the servo controllers.
+ */
+extern void arm_setup(byte pin1, byte pin2, byte pin3, byte pin4);
+
+
+/**
  * Raise the arm to stop drawing.
  */
 extern void arm_raise();
