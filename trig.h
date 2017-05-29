@@ -28,7 +28,7 @@
 // Side lengths (Centimeters)
 #define A  9.70   // Length between Servo 3 and 4
 #define C 10.40   // Length between Servo 2 and 3
-#define D 12.80   // Length between Servo 4 and tip
+#define D 13.60   // Length between Servo 4 and tip
 #define H  7.30   // Height of Servo 2 from the writing surface
 #define L 16.00   // Length between Servo 2 and tip at rest
 
