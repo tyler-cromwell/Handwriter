@@ -86,7 +86,7 @@ void arm_prepare() {
 
 
 void arm_extend(double l) {
-    //double t1 = servo1.read() - THETA_INIT1;
+    double t1 = servo1.read() - THETA_INIT1;
     double t2 = _theta2(l);
     double t2h = _theta2h(l);
     double t3 = _theta3(l);
