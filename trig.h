@@ -21,12 +21,12 @@
 
 // Starting angles (Degrees)
 #define THETA_INIT1 102   // Servo 1
-#define THETA_INIT2 124   // Servo 2
+#define THETA_INIT2 130   // Servo 2
 #define THETA_INIT3  56   // Servo 3
 #define THETA_INIT4 104   // Servo 4
 
 // Side lengths (Centimeters)
-#define A  9.80   // Length between Servo 3 and 4
+#define A  9.70   // Length between Servo 3 and 4
 #define C 10.40   // Length between Servo 2 and 3
 #define D 13.50   // Length between Servo 4 and tip
 #define H  7.30   // Height of Servo 2 from the writing surface
