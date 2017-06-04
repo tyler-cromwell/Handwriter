@@ -20,7 +20,7 @@
 #define ARM_H
 
 // Off <= 0, On > 0
-#define ARM_DEBUG 0
+#define ARM_DEBUG 1
 
 
 /**
@@ -30,51 +30,15 @@ extern void arm_setup(byte pin1, byte pin2, byte pin3, byte pin4);
 
 
 /**
- * Raise the arm to stop drawing.
- */
-extern void arm_raise();
-
-
-/**
- * Lower the arm to start drawing.
- */
-extern void arm_lower();
-
-
-/**
  * Set arm to default position.
  */
 extern void arm_reset();
 
 
 /**
- * Set arm to starting position.
+ * Set arm to certain length outward.
  */
-extern void arm_prepare();
-
-
-/**
- * Extend the arm out by the given length.
- * 
- * Parameters:
- *   double l: The length to extend by (centimeters).
- */
-extern void arm_extend(double l);
-
-
-/**
- * Parameters:
- *   double f: Half the length of the line to draw (centimeters).
- *   double l: The length to extend by (centimeters).
- */
-extern void arm_draw_side(double f, double l);
-
-
-/**
- * UNTESTED CODE!
- * CHECK FOR DIRECTION AND IF ANGLE SIGNS ARE CORRECT!
- */
-extern void arm_draw_forward(double f, double g, double l);
+extern void arm_set_extension(double l);
 
 
 #endif

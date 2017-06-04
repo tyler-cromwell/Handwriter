@@ -23,12 +23,7 @@
 
 
 double _sideB(double l) {
-    return sqrt(pow(H, 2.0) + pow(L + l, 2.0));
-}
-
-
-double _length(double b) {
-    return sqrt(pow(b, 2.0) - pow(H, 2.0)) - L;
+    return sqrt(pow(E, 2.0) + pow(L + l, 2.0));
 }
 
 
@@ -58,8 +53,8 @@ double _theta2(double l) {
 }
 
 
-double _theta2h(double l) {
-    return 90.0 - DEGREES(acos(H / _sideB(l)));
+double _theta2e(double l) {
+    return DEGREES(atan(E / (L + l)));
 }
 
 

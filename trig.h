@@ -20,17 +20,17 @@
 #define TRIG_H
 
 // Starting angles (Degrees)
-#define THETA_INIT1 102   // Servo 1
+#define THETA_INIT1 103   // Servo 1
 #define THETA_INIT2 130   // Servo 2
-#define THETA_INIT3  56   // Servo 3
+#define THETA_INIT3  55   // Servo 3
 #define THETA_INIT4 104   // Servo 4
 
 // Side lengths (Centimeters)
-#define A  9.70   // Length between Servo 3 and 4
-#define C 10.40   // Length between Servo 2 and 3
+#define A  9.90   // Length between Servo 3 and 4
+#define C 10.45   // Length between Servo 2 and 3
 #define D 13.50   // Length between Servo 4 and tip
-#define H  7.30   // Height of Servo 2 from the writing surface
-#define L 16.00   // Length between Servo 2 and tip at rest
+#define E  7.50   // Height of Servo 2 from the writing surface
+#define L 18.45   // Length between Servo 2 and tip at rest (18.45 minimum)
 
 // Convert Radians to Degrees
 #define DEGREES(rad) ((rad) * (180.0 / M_PI))
@@ -78,7 +78,7 @@ extern double _theta2(double l);
 /**
  *
  */
-extern double _theta2h(double l);
+extern double _theta2e(double l);
 
 
 /**
